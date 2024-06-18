@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">
           <Image 
-            src="/assets/logo-PNG.png" 
+            src="/assets/logo-PNG-semfundo.png" 
             alt="Ginecologia e Obstetrícia" 
             width={80} 
             height={80} 
@@ -42,10 +42,10 @@ const Navbar = () => {
           className={`${isOpen ? "block" : "hidden"} md:flex md:items-center md:space-x-4 md:ml-4`}
           style={{ marginLeft: "-0.5rem" }} // Alinhar um pouco mais para a esquerda
         >
-          <Link href="#about" className="text-xl transition duration-300 hover:text-[#cc00cc] hover:scale-105">Sobre</Link>
-          <Link href="#speakers" className="text-xl transition duration-300 hover:text-[#cc00cc] hover:scale-105">Palestrantes</Link>
-          <Link href="#schedule" className="text-xl transition duration-300 hover:text-[#cc00cc] hover:scale-105">Programação</Link>
-          <Link href="#register" className="text-xl transition duration-300 hover:text-[#cc00cc] hover:scale-105">Inscreva-se</Link>
+          <Link href="#about" className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105">Sobre</Link>
+          <Link href="#speakers" className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105">Palestrantes</Link>
+          <Link href="#schedule" className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105">Programação</Link>
+          <Link href="#register" className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105">Inscreva-se</Link>
         </div>
       </div>
     </nav>

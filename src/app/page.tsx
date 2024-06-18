@@ -12,6 +12,7 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <SpeakersSection />
         <AboutSection />
         <SpeakersSection />
         <ScheduleSection />

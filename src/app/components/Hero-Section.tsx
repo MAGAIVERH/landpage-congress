@@ -2,12 +2,13 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import BotaoEscreva from './botaoEscreva-se';
 
 const HeroSection = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const targetDate: Date = new Date('2024-12-31T00:00:00Z'); // Data do evento em UTC
+    const targetDate: Date = new Date('2024-12-30T00:00:00Z'); // Data do evento em UTC
 
     const countdown = setInterval(() => {
       updateTimeLeft(targetDate);
@@ -97,12 +98,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <a
-          href="#register"
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-14 md:py-4 md:px-8 rounded-[15px] border-none inline-block mt-4"
-        >
-          Inscreva-se Agora
-        </a>
+       <BotaoEscreva/>
       </div>
     </section>
   );

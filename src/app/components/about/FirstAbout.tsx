@@ -11,7 +11,7 @@ const FirstAbout = () => {
           {curso.status && <p className="text-yellow-600">{curso.status}</p>}
           {curso.preco && <p className="text-red-600">{curso.preco}</p>}
           <p className="text-gray-600">{curso.data}</p>
-          <BotaoEscreva/>
+          <BotaoEscreva text="Inscreva-se" bgColor='#006400' hoverColor='#228B22'/>
         </div>
       ))}
     </div>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import BotaoEscreva from './botaoEscreva-se';
 
+
 const HeroSection = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -98,7 +99,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-       <BotaoEscreva/>
+      <BotaoEscreva text="Inscreva-se" bgColor='#006400' hoverColor='#228B22'/>
       </div>
     </section>
   );

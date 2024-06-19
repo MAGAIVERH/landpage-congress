@@ -1,11 +1,14 @@
+import BotaoEscreva from "./botaoEscreva-se";
+
 const ScheduleSection = () => {
   return (
-    <section id="schedule" className="py-10 bg-gray-100">
+    <section id="schedule" className="py-10 bg-white">
       <div className="container mx-auto text-center p-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6">Programação</h2>
+        <h2 className="text-4xl md:text-3xl font-bold mb-12  text-[#ea0bb4]">Programações Científicas</h2>
         <div className="text-left">
-          <p className="text-md md:text-lg mb-4">
-            Confira a programação completa do nosso congresso:
+          
+          <p className="text-md md:text-lg mb-12">
+          programacao
           </p>
           <ul className="list-disc list-inside text-left md:text-left mx-auto md:mx-0">
             <li>09:00 - Abertura</li>

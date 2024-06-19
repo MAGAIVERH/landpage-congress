@@ -4,7 +4,7 @@ const presidents: President[] = [
     {
       name: 'Dra. Sammya Bezerra',
       position: 'Presidente da SOCEGO',
-      atuacao: 'Palestrante Convidado',                                               
+      atuacao: 'Presidente',                                               
       image: '/assets/Sammya-Bezerra-Maia-E-Holanda-Moura.jpg',
       message: 'Convidamos(a) os colegas médicos, residentes, estudantes e outros profissionais da área da saúde a participarem ativamente da nossa programação científica. Muito além da nossa preciosa troca de experiências, teremos o privilégio de homenagear presencialmente o Dr. Arnaldo Afonso Carvalho, ilustre filho de Iguatu, que há décadas abrilhanta a Sociedade Cearense de Ginecologia e Obstetrícia com seu notório conhecimento na especialidade.',
       instagram: 'https://instagram.com',
@@ -15,7 +15,7 @@ const presidents: President[] = [
     {
         name: 'Dr. Joab Soares de Lima',
         position: 'Presidente da SOCEGO –Coordenador do Curso de Medicina Estácio-IDOMED',
-        atuacao: 'Presiente e Palestrante',  
+        atuacao: 'Presidente e Palestrante',  
         image: '/assets/Joab-Soares-De-Lima-CE.jpg',
         message: 'Estimados(as) colegas, sejam bem-vindos(as),Participar da XLIII Jornada Cearense de Ginecologia e Obstetrícia, da VII Jornada Iguatuense de Ginecologia e Obstetrícia e da III Jornada Multiprofissional da Saúde Estácio – IDOMED, nos trará uma grande oportunidade para acesso aos avanços da ciência e das novas tecnologias. Inscrevam-se e juntos desfrutaremos de momentos de congraçamento, revendo amigos e grandes ícones de nossa GO. Até lá!',
         instagram: 'https://instagram.com',

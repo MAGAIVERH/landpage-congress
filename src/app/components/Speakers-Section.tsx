@@ -9,6 +9,7 @@ import InstagramIcon from '../../../public/assets/icons/instagram.png';
 import FacebookIcon from '../../../public/assets/icons/facebook.png';
 import LinkedInIcon from '../../../public/assets/icons/linkedin.png';
 import { President } from './types/presidentTypes';
+import BotaoEscreva from './botaoEscreva-se';
 
 const SpeakersSection = () => {
   const [showMessage, setShowMessage] = useState(false);
@@ -70,7 +71,7 @@ const SpeakersSection = () => {
                     {president.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{president.position}</p>
-                  <p className="text-gray-600 font-semibold">Palestrante</p>
+                  <p className="text-gray-600 font-semibold">{president.atuacao}</p>
 
                   <div className="mt-4 flex justify-center space-x-2">
                     <a href={president.instagram} className="bg-gray-300 p-2 rounded-full">
@@ -102,12 +103,18 @@ const SpeakersSection = () => {
                     </a>
                   </div>
 
-                  <a
+                  {/* <a
                     onClick={() => handleShowMessage(president)}
                     className="cursor-pointer bg-[#ea0bb4] hover:bg-[#e804c4] text-white font-bold py-3 px-14 md:py-4 md:px-8 rounded-[15px] border-none inline-block mt-4"
                   >
                     Ver mensagem
-                  </a>
+                  </a> */}
+                  <BotaoEscreva
+                        text="Ver mensagem"
+                        bgColor="#ea0bb4"  // Cor da logo
+                        hoverColor="#e804c4"  // Cor da logo mais escura
+                        onClick={() => handleShowMessage(president)}
+                      />
                 </div>
 
                 {showMessage && activePresident === president && (
@@ -127,6 +134,7 @@ const SpeakersSection = () => {
                       >
                         X
                       </button>
+                 
                     </div>
                   </div>
                 )}

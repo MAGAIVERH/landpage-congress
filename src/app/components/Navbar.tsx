@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState } from "react";
-import Image from "next/image";
+import Link from 'next/link';
+import { useState } from 'react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +11,11 @@ const Navbar = () => {
     <nav className="bg-white p-2 text-[#ea0bb4] md:block hidden">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">
-          <Image 
-            src="/assets/logo-PNG-semfundo.png" 
-            alt="Ginecologia e Obstetrícia" 
-            width={80} 
-            height={80} 
+          <Image
+            src="/assets/logo-PNG-semfundo.png"
+            alt="Ginecologia e Obstetrícia"
+            width={80}
+            height={80}
           />
         </div>
         <div className="block md:hidden">
@@ -23,7 +23,8 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="focus:outline-none"
           >
-            <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            {/* Caso eu decidar colocar menu na versao mobile */}
+            {/* <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
               {isOpen ? (
                 <path
                   fillRule="evenodd"
@@ -35,17 +36,53 @@ const Navbar = () => {
                   d="M4 5h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
                 />
               )}
-            </svg>
+            </svg> */}
           </button>
         </div>
         <div
-          className={`${isOpen ? "block" : "hidden"} md:flex md:items-center md:space-x-4 md:ml-4`}
-          style={{ marginLeft: "-0.5rem" }} // Alinhar um pouco mais para a esquerda
+          className={`${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-6 md:ml-4`}
+          style={{ marginLeft: '-0.5rem' }} // Alinhar um pouco mais para a esquerda
         >
-          <Link href="#about" className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105">Sobre</Link>
-          <Link href="#speakers" className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105">Palestrantes</Link>
-          <Link href="#schedule" className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105">Programação</Link>
-          <Link href="#register" className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105">Inscreva-se</Link>
+          <Link
+            href="#about"
+            className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
+          >
+            Sobre
+          </Link>
+          <Link
+            href="#speakers"
+            className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
+          >
+            Presidentes
+          </Link>
+
+          <Link
+            href="#schedule"
+            className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
+          >
+            Programação
+          </Link>
+
+          <Link
+            href="#people"
+            className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
+          >
+            Palestrantes
+          </Link>
+
+          <Link
+            href="#local"
+            className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
+          >
+            Local
+          </Link>
+
+          <Link
+            href="#register"
+            className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
+          >
+            Inscreva-se
+          </Link>
         </div>
       </div>
     </nav>
@@ -53,5 +90,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

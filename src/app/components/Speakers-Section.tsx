@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
@@ -13,7 +13,9 @@ import BotaoEscreva from './botaoEscreva-se';
 
 const SpeakersSection = () => {
   const [showMessage, setShowMessage] = useState(false);
-  const [activePresident, setActivePresident] = useState<President | null>(null);
+  const [activePresident, setActivePresident] = useState<President | null>(
+    null,
+  );
   const swiperRef = useRef<any>(null);
   const [isAutoplaying, setIsAutoplaying] = useState(true);
 
@@ -56,7 +58,7 @@ const SpeakersSection = () => {
           }}
           loop={true}
         >
-          {presidents.map((president, index) => (
+          {presidents.slice(0, 3).map((president, index) => (
             <SwiperSlide key={index}>
               <div className="relative bg-white p-4 md:p-6 rounded-lg shadow-lg">
                 <div className="overflow-hidden rounded-t-lg h-120 md:h-80">
@@ -71,50 +73,55 @@ const SpeakersSection = () => {
                     {president.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{president.position}</p>
-                  <p className="text-gray-600 font-semibold">{president.atuacao}</p>
+                  <p className="text-gray-600 font-semibold">
+                    {president.atuacao}
+                  </p>
 
                   <div className="mt-4 flex justify-center space-x-2">
-                    <a href={president.instagram} className="bg-gray-300 p-2 rounded-full">
-                      <Image 
-                        src={InstagramIcon} 
-                        alt="Instagram" 
+                    <a
+                      href={president.instagram}
+                      className="bg-gray-300 p-2 rounded-full"
+                    >
+                      <Image
+                        src={InstagramIcon}
+                        alt="Instagram"
                         width={24}
                         height={24}
-                        className="w-6 h-6" 
+                        className="w-6 h-6"
                       />
                     </a>
-                    <a href={president.facebook} className="bg-gray-300 p-2 rounded-full">
-                      <Image 
-                        src={FacebookIcon} 
-                        alt="Facebook" 
+                    <a
+                      href={president.facebook}
+                      className="bg-gray-300 p-2 rounded-full"
+                    >
+                      <Image
+                        src={FacebookIcon}
+                        alt="Facebook"
                         width={24}
                         height={24}
-                        className="w-6 h-6" 
+                        className="w-6 h-6"
                       />
                     </a>
-                    <a href={president.linkedin} className="bg-gray-300 p-2 rounded-full">
-                      <Image 
-                        src={LinkedInIcon} 
-                        alt="LinkedIn" 
+                    <a
+                      href={president.linkedin}
+                      className="bg-gray-300 p-2 rounded-full"
+                    >
+                      <Image
+                        src={LinkedInIcon}
+                        alt="LinkedIn"
                         width={24}
                         height={24}
-                        className="w-6 h-6" 
+                        className="w-6 h-6"
                       />
                     </a>
                   </div>
 
-                  {/* <a
-                    onClick={() => handleShowMessage(president)}
-                    className="cursor-pointer bg-[#ea0bb4] hover:bg-[#e804c4] text-white font-bold py-3 px-14 md:py-4 md:px-8 rounded-[15px] border-none inline-block mt-4"
-                  >
-                    Ver mensagem
-                  </a> */}
                   <BotaoEscreva
-                        text="Ver mensagem"
-                        bgColor="#ea0bb4"  // Cor da logo
-                        hoverColor="#e804c4"  // Cor da logo mais escura
-                        onClick={() => handleShowMessage(president)}
-                      />
+                    text="Ver mensagem"
+                    bgColor="#ea0bb4" // Cor da logo
+                    hoverColor="#e804c4" // Cor da logo mais escura
+                    onClick={() => handleShowMessage(president)}
+                  />
                 </div>
 
                 {showMessage && activePresident === president && (
@@ -127,14 +134,15 @@ const SpeakersSection = () => {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <p className="text-gray-600 font-bold mb-4">{president.message}</p>
+                      <p className="text-gray-600 font-bold mb-4">
+                        {president.message}
+                      </p>
                       <button
                         onClick={handleCloseMessage}
                         className="bg-[#ea0bb4] hover:bg-[#e804c4] text-white font-bold py-2 px-4 rounded-full"
                       >
                         X
                       </button>
-                 
                     </div>
                   </div>
                 )}
@@ -148,4 +156,3 @@ const SpeakersSection = () => {
 };
 
 export default SpeakersSection;
-

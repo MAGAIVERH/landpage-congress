@@ -1,10 +1,11 @@
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/Hero-Section";
-import AboutSection from "./components/About-Section";
-import SpeakersSection from "./components/Speakers-Section";
-import ScheduleSection from "./components/Schedule-Section";
-import RegisterSection from "./components/Register-Section";
-import Footer from "./components/Footer";
+import Navbar from './components/Navbar';
+import HeroSection from './components/Hero-Section';
+import AboutSection from './components/About-Section';
+import SpeakersSection from './components/Speakers-Section';
+import ScheduleSection from './components/Schedule-Section';
+import RegisterSection from './components/Register-Section';
+import Footer from './components/Footer';
+import PeopleSection from './components/PeopleSection';
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
         <SpeakersSection />
         <AboutSection />
         <ScheduleSection />
-        <SpeakersSection />
+        <PeopleSection />
         <RegisterSection />
       </main>
       <Footer />

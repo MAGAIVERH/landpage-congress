@@ -71,14 +71,21 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="#local"
+            href="#location"
             className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
           >
             Local
           </Link>
 
           <Link
-            href="#register"
+            href="#contact"
+            className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
+          >
+            Contato
+          </Link>
+
+          <Link
+            href="#contact"
             className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
           >
             Inscreva-se

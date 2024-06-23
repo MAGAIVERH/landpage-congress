@@ -123,13 +123,15 @@ const ProgramacaoJornada = () => {
           </p>
           {/* Adicione mais eventos conforme necessário */}
         </div>
-        <Link href="#schedule">
-          <BotaoEscreva
-            text="Voltar ao menu Programação"
-            bgColor="#ea0bb4"
-            hoverColor="#e804c4"
-          />
-        </Link>
+        <div className="flex justify-center">
+          <Link href="#schedule">
+            <BotaoEscreva
+              text="Voltar ao menu Programação"
+              bgColor="#ea0bb4"
+              hoverColor="#e804c4"
+            />
+          </Link>
+        </div>
       </div>
     </>
   );

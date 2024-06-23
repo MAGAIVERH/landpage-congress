@@ -306,13 +306,15 @@ const ProgramacaoGinecologia = () => {
           {/* Linha divisória */}
         </div>
 
-        <Link href="#schedule">
-          <BotaoEscreva
-            text="Voltar ao menu Programação"
-            bgColor="#ea0bb4"
-            hoverColor="#e804c4"
-          />
-        </Link>
+        <div className="flex justify-center">
+          <Link href="#schedule">
+            <BotaoEscreva
+              text="Voltar ao menu Programação"
+              bgColor="#ea0bb4"
+              hoverColor="#e804c4"
+            />
+          </Link>
+        </div>
       </div>
     </>
   );

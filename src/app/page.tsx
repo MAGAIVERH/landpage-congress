@@ -3,9 +3,10 @@ import HeroSection from './components/Hero-Section';
 import AboutSection from './components/About-Section';
 import SpeakersSection from './components/Speakers-Section';
 import ScheduleSection from './components/Schedule-Section';
-import RegisterSection from './components/Register-Section';
 import Footer from './components/Footer';
 import PeopleSection from './components/PeopleSection';
+import LocationSection from './components/LocationSection';
+import ContactSection from './components/Contact-Section';
 
 const Home = () => {
   return (
@@ -17,7 +18,8 @@ const Home = () => {
         <AboutSection />
         <ScheduleSection />
         <PeopleSection />
-        <RegisterSection />
+        <LocationSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>

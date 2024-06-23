@@ -59,7 +59,7 @@ const PeopleSection = () => {
   return (
     <section id="people" className="py-10 bg-gray-100">
       <div className="container mx-auto text-center p-4 ">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 mt-8">
+        <h2 className="text-2xl md:text-3xl font-bold mb-12 ">
           Professores Convidados
         </h2>
         {isLargeScreen ? (

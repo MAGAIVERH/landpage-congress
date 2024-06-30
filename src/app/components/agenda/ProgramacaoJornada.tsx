@@ -7,7 +7,7 @@ const ProgramacaoJornada = () => {
     <>
       {/*Primeiro bolco */}
       <div className="">
-        <h2 className="text-4xl md:text-3xl font-bold mb-4 mt-16 text-center text-[#ea0bb4]">
+        <h2 className="text-4xl md:text-3xl font-bold mb-4 mt-8 text-center text-[#ea0bb4]">
           Programação
         </h2>
         <h3 className="font-bold text-center mb-10">

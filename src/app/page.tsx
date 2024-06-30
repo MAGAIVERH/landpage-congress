@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import PeopleSection from './components/PeopleSection';
 import LocationSection from './components/LocationSection';
 import ContactSection from './components/Contact-Section';
+import LastCall from './components/LastCall';
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
         <ScheduleSection />
         <PeopleSection />
         <LocationSection />
+        <LastCall />
         <ContactSection />
       </main>
       <Footer />

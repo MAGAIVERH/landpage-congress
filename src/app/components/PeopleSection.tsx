@@ -2,11 +2,11 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import presidents from './data/presidentsData';
+import presidents from '../data/presidentsData';
 import InstagramIcon from '../../../public/assets/icons/instagram.png';
 import FacebookIcon from '../../../public/assets/icons/facebook.png';
 import LinkedInIcon from '../../../public/assets/icons/linkedin.png';
-import { President } from './types/presidentTypes';
+import { President } from '../types/presidentTypes';
 import BotaoEscreva from './botaoEscreva-se';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

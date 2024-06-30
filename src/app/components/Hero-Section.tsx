@@ -1,12 +1,17 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import BotaoEscreva from './botaoEscreva-se';
-
+import Link from 'next/link';
 
 const HeroSection = () => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const targetDate: Date = new Date('2024-12-30T00:00:00Z'); // Data do evento em UTC
@@ -43,21 +48,21 @@ const HeroSection = () => {
   return (
     <section
       className="relative bg-cover bg-center h-screen flex items-center justify-center p-4 "
-      style={{ backgroundImage: "url(/assets/imagem-congresso.png)" }}
+      style={{ backgroundImage: 'url(/assets/imagem-congresso.png)' }}
     >
       <div className="absolute inset-0 bg-[#ea0bb4] opacity-80"></div>
       <div className="relative text-center">
         {/* Adicionando a imagem da logo */}
         <Image
-          src="/assets/Logo-PNG-semfundo.png"  // Caminho para a imagem da logo branca
+          src="/assets/Logo-PNG-semfundo.png" // Caminho para a imagem da logo branca
           alt="Logo"
           width={80}
           height={80}
           className="mx-auto mt-4 w-32 md:hidden bg-white p-2 rounded-full mb-10" // Estilos para centralizar e ajustar tamanho
         />
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-          XLIII Jornada de Ginecologia e Obstetrícia
-          VII Jornada Iguatuense de Ginecologia e Obstetrícia
+        <h1 className="text-1xl md:text-5xl font-bold mb-4 text-white">
+          XLIII Jornada de Ginecologia e Obstetrícia VII Jornada Iguatuense de
+          Ginecologia e Obstetrícia
         </h1>
         <p className="text-lg md:text-2xl mb-6 text-white">
           Participe do nosso congresso pediátrico e atualize seus conhecimentos
@@ -99,14 +104,16 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      <BotaoEscreva text="Inscreva-se" bgColor='#006400' hoverColor='#228B22'/>
+        <Link href="#about">
+          <BotaoEscreva
+            text="Inscreva-se"
+            bgColor="#006400"
+            hoverColor="#228B22"
+          />
+        </Link>
       </div>
     </section>
   );
 };
 
 export default HeroSection;
-
-
-
-

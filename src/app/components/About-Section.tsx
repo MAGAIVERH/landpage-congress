@@ -1,3 +1,4 @@
+'use client';
 import FirstAbout from './about/FirstAbout';
 import SecondAbout from './about/SecondAbout';
 import ThirdAbout from './about/ThirdAbout';

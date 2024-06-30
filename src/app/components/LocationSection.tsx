@@ -1,7 +1,6 @@
 // LocationSection.tsx
 'use client';
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -13,15 +12,38 @@ const LocationSection: React.FC = () => {
     '/assets/local/Capus.png',
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        setActiveIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1,
+        );
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length, isHovered]);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <section id="location" className="py-10 bg-white">
-      <div className="container mx-auto  bg-gray-100 p-6 md:p-6 rounded-lg shadow-lg ">
+      <div className="container mx-auto bg-gray-100 p-6 md:p-6 rounded-lg shadow-lg">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:space-x-8">
-          <div className="w-full lg:w-1/2 mb-8 lg:mb-0 ">
-            <h2 className="text-4xl md:text-3xl font-bold mb-12 mt-10 text-center text-[#ea0bb4] ">
+          <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+            <h2 className="text-4xl md:text-3xl font-bold mb-10 mt-4 text-center text-[#ea0bb4]">
               Sobre o local do evento
             </h2>
-            <p className="text-gray-700 mb-4 text-justify lg:text-left ">
+            <p className="text-gray-700 mb-4 text-justify lg:text-left">
               Centro Universitário Estácio do Ceará - Campus Iguatu Barro Alto,
               Iguatu - CE A XLIII Jornada de Ginecologia e Obstetrícia e a VII
               Jornada Iguatuense ocorrerão no Centro Universitário Estácio do
@@ -34,10 +56,19 @@ const LocationSection: React.FC = () => {
             </p>
           </div>
           <div className="w-full lg:w-1/2 flex flex-col items-center">
-            <div className="w-full  lg:mb-8">
+            <div
+              className="w-full lg:mb-8"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
               <Swiper spaceBetween={10} slidesPerView={1} loop>
                 {images.map((src, index) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide
+                    key={index}
+                    style={{
+                      display: index === activeIndex ? 'block' : 'none',
+                    }}
+                  >
                     <Image
                       src={src}
                       alt={`Local do Evento ${index + 1}`}
@@ -61,6 +92,22 @@ const LocationSection: React.FC = () => {
             allowFullScreen
             title="Local do Evento"
           ></iframe>
+        </div>
+
+        <div className="text-center mt-10 mb-8">
+          <h2 className="text-4xl md:text-3xl font-bold mb-6 mt-6 text-center text-[#ea0bb4] ">
+            Mais informações
+          </h2>
+          <p>
+            <span className="font-bold"> Centro Universitario Estacio:</span>{' '}
+            1201 Av. Duque de Caxias, 101 - Centro,
+          </p>
+          <p>
+            <span className="font-bold">Telefone:</span> (85) 0234 -2345
+          </p>
+          <p>
+            <span className="font-bold ">Email:</span> infomacoes@teste.com
+          </p>
         </div>
       </div>
     </section>

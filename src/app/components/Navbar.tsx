@@ -85,7 +85,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="#contact"
+            href="#about"
             className="text-xl transition duration-300 hover:text-[#e804c4] hover:scale-105"
           >
             Inscreva-se

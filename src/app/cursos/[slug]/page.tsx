@@ -1,52 +1,30 @@
-// 'use client';
-// import { GetStaticProps, GetStaticPaths } from 'next';
-// import { useRouter } from 'next/router';
-// import { InfoCursos } from '../../types/inforCursos.types';
-// import infoCursos from '../../data/infoCursosaData';
-// import CursoCard from '../../components/CursoCard';
+'use client';
 
-// interface Props {
-//   curso: InfoCursos;
-// }
+import infoCursos from '../../data/infoCursosaData';
+import CursoCard from '../../components/CursoCard';
+import { redirect } from 'next/navigation';
 
-// const CursoSlugPage: React.FC<Props> = ({ curso }) => {
-//   const router = useRouter();
+interface Props {
+  params: {
+    slug: string;
+  };
+}
 
-//   if (router.isFallback) {
-//     return <div>Carregando...</div>;
-//   }
+const getData = async (slug: string) => {
+  return infoCursos.find((item) => item.slug === slug);
+};
 
-//   return (
-//     <div className="container mx-auto py-10">
-//       <CursoCard curso={curso} />
-//     </div>
-//   );
-// };
+const CursosSlugPage = async (props: Props) => {
+  const slug = decodeURI(props.params.slug);
+  const curso = await getData(slug);
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const paths = infoCursos.map((curso) => ({
-//     params: { slug: curso.slug },
-//   }));
+  if (!curso) redirect('/');
 
-//   return { paths, fallback: true };
-// };
+  return (
+    <div>
+      <CursoCard curso={curso} />
+    </div>
+  );
+};
 
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-//   const slug = params?.slug as string;
-//   const curso = infoCursos.find((curso) => curso.slug === slug);
-
-//   if (!curso) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-
-//   return {
-//     props: {
-//       curso,
-//     },
-//     revalidate: 1,
-//   };
-// };
-
-// export default CursoSlugPage;
+export default CursosSlugPage;

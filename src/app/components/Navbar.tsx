@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">
           <Image
-            src="/assets/logo-png-semfundo.png"
+            src="/logo-png-semfundo.png"
             alt="Ginecologia e Obstetrícia"
             width={80}
             height={80}
